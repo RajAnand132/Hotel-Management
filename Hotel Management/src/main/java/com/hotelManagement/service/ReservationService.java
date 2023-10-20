@@ -12,8 +12,8 @@ public class ReservationService {
     private ReservationRepository reservationRepository;
 
 
-    public String bookRoom(Reservation reservation) {
+    public Long bookRoom(Reservation reservation) {
         reservationRepository.save(reservation);
-        return "Reservation booked";
+        return reservation.getReservationId();
     }
 }
